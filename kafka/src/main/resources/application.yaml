@@ -12,12 +12,16 @@ spring:
           destination: consumeDto-topic
         processString-in-0:
           destination: processString-topic
+          group: app.string.process
         processDto-in-0:
           destination: processDto-topic
+          group: app.dto.process
         consumeString-in-0:
           destination: consumeString-topic
+          group: app.string.processed
         consumeDto-in-0:
           destination: consumeDto-topic
+          group: app.dto.processed
       kafka:
         binder:
           brokers: localhost:9092
