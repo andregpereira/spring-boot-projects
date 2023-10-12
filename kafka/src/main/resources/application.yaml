@@ -1,11 +1,13 @@
 spring:
   cloud:
     function:
-      definition: supplyOut;processString;processDto;consumeString;consumeDto
+      definition: supplyString;processString;processDto;consumeString;consumeDto
     stream:
       bindings:
-        supplyOut-out-0:
+        supplyString-out-0:
           destination: processString-topic
+        supplyDto-out-0:
+          destination: processDto-topic
         processString-out-0:
           destination: consumeString-topic
         processDto-out-0:
