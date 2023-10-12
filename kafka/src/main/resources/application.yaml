@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    function:
+      definition: consumeIn;supplyOut
+    stream:
+      bindings:
+        consumeIn-in-0:
+          destination: topic
+        supplyOut-out-0:
+          destination: topic
+      kafka:
+        binder:
+          brokers: localhost:9092
