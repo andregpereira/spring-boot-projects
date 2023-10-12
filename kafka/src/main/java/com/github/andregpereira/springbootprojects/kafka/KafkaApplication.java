@@ -21,7 +21,7 @@ public class KafkaApplication {
     }
 
     @Bean
-    public Supplier<Message<String>> supplyOut() {
+    public Supplier<Message<String>> supplyString() {
         return () -> {
             try {
                 Thread.sleep(10000);
