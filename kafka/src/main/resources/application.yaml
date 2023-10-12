@@ -1,13 +1,23 @@
 spring:
   cloud:
     function:
-      definition: consumeIn;supplyOut
+      definition: supplyOut;processString;processDto;consumeString;consumeDto
     stream:
       bindings:
-        consumeIn-in-0:
-          destination: topic
         supplyOut-out-0:
-          destination: topic
+          destination: processString-topic
+        processString-out-0:
+          destination: consumeString-topic
+        processDto-out-0:
+          destination: consumeDto-topic
+        processString-in-0:
+          destination: processString-topic
+        processDto-in-0:
+          destination: processDto-topic
+        consumeString-in-0:
+          destination: consumeString-topic
+        consumeDto-in-0:
+          destination: consumeDto-topic
       kafka:
         binder:
           brokers: localhost:9092
