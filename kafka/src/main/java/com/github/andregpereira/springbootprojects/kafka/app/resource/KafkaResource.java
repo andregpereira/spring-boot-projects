@@ -22,7 +22,7 @@ public class KafkaResource {
     @PostMapping()
     public ResponseEntity<Void> sendMessage(@RequestBody MessageDto dto) {
         log.info("Enviando DTO");
-        operations.send("processDto-in-0", MessageBuilder.withPayload(dto).build());
+        operations.send("supplyDto-out-0", MessageBuilder.withPayload(dto).build());
         return ResponseEntity.ok().build();
     }
 
